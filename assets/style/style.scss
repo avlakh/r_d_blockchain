@@ -44,6 +44,15 @@ header {
     width: 100%;
     position: fixed;
     z-index: 100;
+    transition: all .5s ease;
+}
+
+.header_scroll {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(140.36deg, #2125A8 22.65%, #0F53FA 85.66%);
+    box-shadow: 0 0 5px #555;
+    opacity: 0.9;
 }
 
 header .container {
@@ -210,8 +219,10 @@ header .container {
 
 .sign_in {
     color: #00F8A5;
-    text-decoration: underline;
     margin-left: 5px;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 // HOME SOCIAL MEDIA LIST
@@ -310,3 +321,117 @@ header .container {
     }
 }
 
+// BEST FEATURES SECTION
+
+.best_features {
+    padding: 130px;
+}
+
+.best_features_text {
+    width: 50%;
+    margin-bottom: 80px;
+    h4 {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 36px;
+        text-transform: uppercase;
+        color: #11A1F2;
+        margin-bottom: 10px;
+        padding-left: 102px;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: -20px;
+            width: 110px;
+            border-bottom: 1px solid #11A1F2;
+        }
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 75px;
+        background: linear-gradient(140.36deg, #060842 22.65%, #062E92 85.66%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        padding-left: 102px;
+    }
+    p {
+        line-height: 24px;
+        color: #56628B;
+    }
+}
+
+// BEST FEATURES CARD
+
+.best_features_cards {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    gap: 55px;
+}
+
+.bf_card {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 70px 41px 0;
+    box-shadow: 0px 80px 20px -50px rgba(29, 101, 241, 0.5);
+    &:nth-child(1) {
+        background: linear-gradient(180deg, #FF5E3A 0%, #FF2A68 100%);
+    }
+    &:nth-child(2) {
+        background: linear-gradient(180deg, #C444FC 0%, #6C44FC 100%);
+    }
+    &:nth-child(3) {
+        background: linear-gradient(180deg, #1A92FD 0%, #1D63F0 100%);
+    }
+}
+
+.bf_card_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    svg {
+        margin-bottom: 30px;
+    }
+    h4 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+        position: relative;
+        margin-bottom: 55px;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 143px;
+            height: 1px;
+            border-bottom: 1px solid #FFFFFF;
+        }
+    }
+    p {
+        color: #fff;
+    }
+}
+
+// FEATURES SECTION
+
+.features {
+    background-image: url('../images/features_background.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    padding-top: 105px;
+}
+
+.features_wrap {
+    
+}
