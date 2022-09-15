@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: #E8edff;
   font-family: "Poppins", sans-serif;
   color: #000;
   font-size: 1rem;
@@ -267,7 +267,7 @@ header .container {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background: #E5E5E5;
+  background: #E8edff;
   z-index: 20;
 }
 
@@ -279,7 +279,7 @@ header .container {
   height: 0;
   border-left: 63px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 38px solid #E5E5E5;
+  border-bottom: 38px solid #E8edff;
 }
 
 .arrow_triangle.right_tri {
@@ -290,7 +290,7 @@ header .container {
   height: 0;
   border-left: 20px solid transparent;
   border-right: 63px solid transparent;
-  border-bottom: 38px solid #E5E5E5;
+  border-bottom: 38px solid #E8edff;
 }
 
 .arrow_inner a {
@@ -409,6 +409,291 @@ header .container {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1000px;
-  padding-top: 105px;
+  padding-top: 235px;
+}
+
+.features_container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.features_wrap {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.features_text {
+  width: 49%;
+}
+.features_text h3 {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 75px;
+  background: linear-gradient(140.36deg, #060842 22.65%, #062E92 85.66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 73px;
+}
+.features_text p {
+  line-height: 30px;
+  color: #56628B;
+  padding-bottom: 338px;
+}
+.features_text .p_to_be_changed {
+  padding-bottom: 238px;
+}
+
+.process {
+  padding: 256px 0;
+}
+.process .process_text {
+  width: 100%;
+  margin-bottom: 84px;
+}
+
+.process_content {
+  width: 60%;
+}
+
+.accordion {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  padding: 18px;
+  width: 100%;
+  height: 65px;
+  text-align: left;
+  border: none;
+  outline: none;
+  z-index: 10;
+  transition: 0.4s;
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+.accordion span {
+  position: relative;
+  padding-left: 15px;
+  z-index: 15;
+}
+.accordion span:before {
+  content: url(../images/plus_sign_acc.svg);
+  float: right;
+  transition: all 0.2s ease;
+}
+.accordion:before {
+  top: 1px;
+  transform: perspective(15px) rotateX(1deg);
+}
+.accordion:after {
+  bottom: 0px;
+  transform: perspective(15px) rotateX(-1deg);
+}
+
+.accordion:before,
+.accordion:after {
+  position: absolute;
+  background: linear-gradient(90deg, #7C172C 3.4%, #5C00D7 100%);
+  content: "";
+  width: 100%;
+  left: 0px;
+  height: 32px;
+  z-index: 5;
+}
+
+.accordion.active span:before {
+  rotate: -45deg;
+}
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 9px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #56628B;
+}
+
+.sponsors {
+  background-image: url("../images/features_background.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 0;
+}
+.sponsors .container {
+  display: flex;
+  flex-direction: column;
+  gap: 138px;
+  margin-bottom: 133px;
+}
+
+.sponsors_text {
+  width: 38%;
+  align-self: flex-end;
+}
+.sponsors_text h3 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 45px;
+  background: linear-gradient(140.36deg, #060842 22.65%, #062E92 85.66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.sponsors_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.sponsors_list a {
+  opacity: 0.75;
+}
+.sponsors_list a:hover {
+  opacity: 1;
+}
+
+.form_container {
+  width: 90%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.sponsors_form {
+  height: 513px;
+  filter: drop-shadow(10px 30px 20px rgba(0, 0, 0, 0.1));
+  background: linear-gradient(90deg, #2830BB 3.4%, #00EFFE 100%);
+  box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+
+.form_inner_container {
+  width: 90%;
+  max-width: 1070px;
+  margin: 0 auto;
+  padding-top: 45px;
+}
+.form_inner_container h3 {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+.form_inner_container p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  color: #FFFFFF;
+  margin-bottom: 45px;
+}
+.form_inner_container input {
+  height: 66px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+.form_inner_container input::placeholder {
+  color: #fff;
+  opacity: 0.75;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+.form_inner_container #form_message {
+  width: 100%;
+}
+.form_inner_container .hexabutton {
+  border: none;
+  outline: none;
+  background: none;
+  width: 200px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  text-transform: none;
+  bottom: -87px;
+  left: 50%;
+  translate: -50%;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.form_inner_container .hexabutton span:first-of-type {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.form_inner_container .hexabutton:before,
+.form_inner_container .hexabutton:after {
+  background: linear-gradient(90deg, #2DBEAB 3.4%, #1BB5F7 100%);
+}
+
+.personal_info_wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 107px;
+  margin-bottom: 50px;
+}
+.personal_info_wrap input {
+  flex-basis: 33%;
+}
+
+.footer {
+  background-color: #DFE8FD;
+}
+
+.footer_container {
+  width: 90%;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 1fr/525px 1fr;
+  gap: 85px;
+  padding: 85px 0;
+}
+.footer_container a {
+  font-size: 20px;
+  line-height: 30px;
+  color: #333333;
+}
+.footer_container a:hover {
+  text-decoration: underline;
+}
+
+.footer_descr h3 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+.footer_descr p {
+  color: #333333;
+}
+
+.footer_menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 140px;
+}
+
+.footer_list,
+.footer_contact {
+  display: flex;
+  flex-direction: column;
 }
