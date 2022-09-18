@@ -103,6 +103,7 @@ header .container {
 .home_section .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 175px;
 }
 
@@ -183,6 +184,7 @@ header .container {
   width: 225px;
   left: 0px;
   height: 32px;
+  transition: all 0.2s ease;
 }
 
 .hexabutton.border:before,
@@ -449,13 +451,17 @@ header .container {
 .process {
   padding: 256px 0;
 }
+.process .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
 .process .process_text {
   width: 100%;
   margin-bottom: 84px;
 }
-
-.process_content {
-  width: 60%;
+.process .process_img {
+  padding-top: 100px;
 }
 
 .accordion {
