@@ -1,18 +1,15 @@
 "use strict";
 
 // HEADER SCROLL
-function headerScroll() {
+window.addEventListener('scroll', function () {
   var header = document.querySelector('header');
-  window.addEventListener('scroll', function (event) {
-    if (window.scrollY > 30) {
-      header.classList.add('header_scroll');
-    } else {
-      header.classList.remove('header_scroll');
-    }
-  });
-}
 
-headerScroll(); // ACCORDION
+  if (window.scrollY > 30) {
+    header.classList.add('header_scroll');
+  } else {
+    header.classList.remove('header_scroll');
+  }
+}); // ACCORDION
 
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -42,7 +39,15 @@ var renderer = new THREE.WebGLRenderer({
 }); // creating element
 
 var elem = document.querySelector('.home_anim');
-renderer.setSize(1000, 300);
+var sizes = {
+  width: window.innerWidth,
+  height: window.innerHeight
+};
+window.addEventListener('resize', function () {
+  sizes.width = window.innerWidth / 2;
+  sizes.height = window.innerHeight / 2;
+  renderer.setSize(sizes.width, sizes.height);
+});
 elem.appendChild(renderer.domElement); // creating colors
 
 var colorYellow = new THREE.Color('hsl(40, 100%, 60%)');
@@ -104,4 +109,29 @@ var animate = function animate() {
   renderer.render(scene, camera);
 };
 
-animate();
+animate(); // FINE ANIMATION TO THE ANCHOR 
+
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+}); // MOBILE MENU HANDLER
+
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('is-active');
+  document.querySelector('#side_block').classList.toggle('open');
+  document.querySelector('#page_overlay').classList.toggle('open');
+  document.querySelector('body').classList.toggle('lock');
+}
+
+document.querySelectorAll('.hamburger').forEach(function (item) {
+  item.addEventListener('click', function () {
+    toggleMenu();
+  });
+});
+document.querySelector('#page_overlay').addEventListener('click', function () {
+  toggleMenu();
+});

@@ -9,6 +9,25 @@
 	<link rel="stylesheet" href="assets/style/style.min.css">
 </head>
 <body>
+	<div id="side_block">
+		<div class="wrapper">
+			<div id="mobile_menu_container">
+				<ul class="mobile_menu_list">
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Service</a></li>
+					<li><a href="#">Store</a></li>
+					<li><a href="#">Buy/sell</a></li>
+					<li><a href="#">Account</a></li>
+				</ul>
+				<div class="hamburger_menu">
+					<button class="hamburger hamburger--spin" type="button">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="page_overlay"></div>
 	<header>
 		<div class="container">
 			<div class="header_logo">
@@ -22,6 +41,11 @@
 					<li><a href="#">Buy/sell</a></li>
 					<li><a href="#">Account</a></li>
 				</ul>
+				<div class="hamburger_menu">
+					<button class="hamburger hamburger--spin" type="button">
+						<span class="hamburger-box"><span class="hamburger-inner"></span></span>
+					</button>
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -56,7 +80,7 @@
 				<div class="arrow_circle">
 					<div class="arrow_triangle left_tri"></div>
 					<div class="arrow_inner">
-						<a href="#"><svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<a href="#best_features_anchor" id="arrow_anchor"><svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_1_2277)">
 							<path d="M7.99982 8V22" stroke="url(#paint0_linear_1_2277)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 							<path d="M14.9998 15L7.99982 22L0.999817 15" stroke="url(#paint1_linear_1_2277)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -90,7 +114,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="best_features">
+		<section class="best_features" id="best_features_anchor">
 			<div class="container">
 				<div class="best_features_text">
 					<h4>how it works</h4>

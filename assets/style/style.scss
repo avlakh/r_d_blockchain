@@ -15,6 +15,9 @@ body {
     color: #000;
     font-size: 1rem;
     line-height: 1.5rem;
+    &.lock {
+        overflow: hidden;
+    }
 }
 
 .container {
@@ -51,7 +54,7 @@ header {
     width: 100%;
     height: 60px;
     background: linear-gradient(140.36deg, #2125A8 22.65%, #0F53FA 85.66%);
-    box-shadow: 0 0 5px #555;
+    box-shadow: 0 0 2px 2px #555;
     opacity: 0.9;
 }
 
@@ -69,6 +72,14 @@ header .container {
     line-height: 30px;
     text-transform: uppercase;
     display: block;
+}
+
+#main_menu {
+    display: flex;
+    align-items: center;
+    .hamburger_menu {
+        display: none;
+    }
 }
 
 .main_menu_list {
@@ -96,6 +107,141 @@ header .container {
         }
     }
 }
+
+// MOBILE MENU
+
+#side_block {
+    display: block;
+    width: 320px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(140.36deg, #2125A8 22.65%, #0F53FA 85.66%);
+    padding: 20px;
+    height: 100vh;
+    z-index: 2000;
+    transform: translate(-320px);
+    transition: all .2s ease;
+    &.open {
+    transform: translate(0px);
+    }
+}
+
+#page_overlay {
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba($color: #000000, $alpha: .7);
+display: none;
+z-index: 1500;
+    &.open {
+        display: block;
+    }
+}
+
+#mobile_menu_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.mobile_menu_list li {
+    margin-bottom: 20px;
+    text-align: center;
+    a {
+        font-size: 22px;
+        color: #fff;
+    }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+
+ .hamburger {
+	padding: 15px 15px;
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: #fff;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible; }
+	.hamburger:hover {
+	  opacity: 0.7; }
+	.hamburger.is-active:hover {
+	  opacity: 0.7; }
+	.hamburger.is-active .hamburger-inner,
+	.hamburger.is-active .hamburger-inner::before,
+	.hamburger.is-active .hamburger-inner::after {
+	  background-color: #fff; }
+  
+  .hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative; }
+  
+  .hamburger-inner {
+	display: block;
+	top: 50%;
+	background-color: #fff;
+	margin-top: -2px; }
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	  width: 40px;
+	  height: 4px;
+	  background-color: #fff;
+	  border-radius: 4px;
+	  position: absolute;
+	  transition-property: transform;
+	  transition-duration: 0.15s;
+	  transition-timing-function: ease; }
+	.hamburger-inner::before, .hamburger-inner::after {
+	  content: "";
+	  display: block; }
+	.hamburger-inner::before {
+	  top: -10px; }
+	.hamburger-inner::after {
+	  bottom: -10px; }
+  
+  /*
+   * Spin
+   */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--spin .hamburger-inner::before {
+	transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+  .hamburger--spin .hamburger-inner::after {
+	transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--spin.is-active .hamburger-inner::before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+  .hamburger--spin.is-active .hamburger-inner::after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
 
 // MAIN
 // HOME SECTION
@@ -145,8 +291,6 @@ header .container {
         font-size: 20px;
         line-height: 30px;
         color: #FFFFFF;
-        width: 538px;
-        // TODO: змінити ширину, коли буду працювати над зображенням по правій стороні
         margin-bottom: 70px;
     }
     h5 {
@@ -245,8 +389,6 @@ header .container {
         border-bottom: 1px solid rgba(255, 255, 255, 0.7);;
     }
     h6 {
-        font-family: 'Poppins';
-        font-style: normal;
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
@@ -308,7 +450,7 @@ header .container {
     border-bottom: 38px solid #E8edff;
 }
 
-.arrow_inner a {
+#arrow_anchor {
     display: block;
     position: relative;
     top: 10px;
@@ -326,7 +468,7 @@ header .container {
 // BEST FEATURES SECTION
 
 .best_features {
-    padding: 130px;
+    padding: 130px 0;
 }
 
 .best_features_text {
@@ -371,15 +513,13 @@ header .container {
 
 .best_features_cards {
     display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr;
+    grid-template: 1fr / repeat(auto-fill, minmax(300px, 1fr) );
     gap: 55px;
 }
 
 .bf_card {
-    width: 400px;
-    height: 500px;
     border-radius: 20px;
-    padding: 70px 41px 0;
+    padding: 70px 41px 60px;
     box-shadow: 0px 80px 20px -50px rgba(29, 101, 241, 0.5);
     &:nth-child(1) {
         background: linear-gradient(180deg, #FF5E3A 0%, #FF2A68 100%);
@@ -446,6 +586,14 @@ header .container {
     gap: 50px;
 }
 
+.features_img {
+    width: 49%;
+    img {
+        width: 100%;
+		height: 100%;
+		object-fit: cover;
+    }
+}
 
 .features_text {
     width: 49%;
@@ -463,8 +611,6 @@ header .container {
         line-height: 30px;
         color: #56628B;
         padding-bottom: 338px;
-        // TODO: змінити мботом при праці з анімацією
-
     }
     .p_to_be_changed {
         padding-bottom: 238px;
@@ -486,6 +632,11 @@ header .container {
     }
     .process_img {
         padding-top: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
@@ -589,6 +740,7 @@ header .container {
 .sponsors_list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-around;
     a {
         opacity: 0.75;
@@ -605,7 +757,7 @@ header .container {
 }
 
 .sponsors_form {
-    height: 513px;
+    padding-bottom: 56px;
     filter: drop-shadow(10px 30px 20px rgba(0, 0, 0, 0.1));
     background: linear-gradient(90deg, #2830BB 3.4%, #00EFFE 100%);
     box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.1);
@@ -699,8 +851,7 @@ header .container {
     width: 90%;
     max-width: 1350px;
     margin: 0 auto;
-    display: grid;
-    grid-template: 1fr / 525px 1fr;
+    display: flex;
     gap: 85px;
     padding: 85px 0;
     a {
@@ -736,4 +887,165 @@ header .container {
 .footer_contact {
     display: flex;
     flex-direction: column;
+}
+
+// RESPONSIVE MEDIA QUERIES
+
+@media screen and (max-width: 1400px) {
+    // FOOTER
+    .footer_container {
+        flex-direction: column;
+    }
+    .footer_menu {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    // BEST FEATURES
+    .best_features_text {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    // HOME SECTION
+    .home_section {
+        .container {
+            flex-direction: column;
+            padding-top: 100px;
+            .home_text {
+                order: 1;
+            }
+        }
+        .sm_list_wrap {
+            padding-bottom: 100px;
+        }
+    }
+    // PROCESS
+    .process {
+        padding: 160px 0 ;
+    }
+    // SPONSORS
+    .sponsors_text {
+        width: 50%;
+        text-align: center;
+    }
+    // FORM
+    .personal_info_wrap {
+        flex-direction: column;
+        gap: 50px;
+        input {
+            flex-basis: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    // HEADER BURGER
+    .main_menu_list {
+        display: none;
+    }
+    #main_menu .hamburger_menu {
+        display: block;
+    }
+    // FEATURES
+    .features {
+        padding-top: 45px;
+    }
+    .features_wrap {
+        flex-direction: column;
+        align-items: center;
+        .features_text {
+            width: 100%;
+            p {
+                padding-bottom: 50px;
+            }
+        }
+        .features_img {
+            width: 50%;
+        }
+    }
+    // BEST FEATURES
+    .best_features {
+        padding: 65px 0;
+        .best_features_text {
+            width: 100%;
+        }
+    }
+    // PROCESS
+    .process {
+        padding: 40px 0;
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .process_img {
+            padding-top: 0;
+        }
+    }
+    // SPONSORS
+    .sponsors {
+        padding: 50px 0;
+        .container {
+            gap: 65px;
+        }
+        .sponsors_text {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    // PROCESS
+    .process {
+        padding: 80px 0 ;
+    }
+    // FOOTER
+    .footer_menu {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home_text {
+        h3 {
+            font-size: 35px;
+            line-height: 65px;
+        }
+        h5 {
+            margin-bottom: 150px;
+        }
+    }
+    .sm_list {
+        flex-wrap: wrap;
+    }
+    .home_text_buttons {
+        flex-direction: column;
+    }
+    .sm_list_wrap {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .best_features_text h3 {
+        padding-left: 0;
+        text-align: center;
+    }
+    .accordion {
+        height: 80px;
+    }
+    .accordion:before, .accordion:after {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    // BEST FEATURES
+    .best_features {
+        padding: 65px 0;
+        .best_features_text h3 {
+            padding-left: 20px;
+        }
+    }
 }
