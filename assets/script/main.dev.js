@@ -40,13 +40,16 @@ var renderer = new THREE.WebGLRenderer({
 
 var elem = document.querySelector('.home_anim');
 var sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
+  width: window.innerWidth / 3,
+  height: window.innerHeight / 3
 };
+renderer.setSize(sizes.width, sizes.height);
 window.addEventListener('resize', function () {
-  sizes.width = window.innerWidth / 2;
-  sizes.height = window.innerHeight / 2;
-  renderer.setSize(sizes.width, sizes.height);
+  if (window.innerWidth < 600) {
+    sizes.width = window.innerWidth / 3;
+    sizes.height = window.innerHeight / 3;
+    renderer.setSize(sizes.width, sizes.height);
+  }
 });
 elem.appendChild(renderer.domElement); // creating colors
 

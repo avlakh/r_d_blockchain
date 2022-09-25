@@ -40,13 +40,16 @@ const renderer = new THREE.WebGLRenderer({
 // creating element
 const elem = document.querySelector('.home_anim');
 const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: window.innerWidth / 3,
+    height: window.innerHeight / 3
 }
+renderer.setSize(sizes.width, sizes.height);
 window.addEventListener('resize', () =>{
-    sizes.width = window.innerWidth / 2;
-    sizes.height = window.innerHeight / 2
-    renderer.setSize(sizes.width, sizes.height);
+    if (window.innerWidth < 600){
+        sizes.width = window.innerWidth / 3;
+        sizes.height = window.innerHeight / 3
+        renderer.setSize(sizes.width, sizes.height);
+    }
 })
 elem.appendChild(renderer.domElement)
 // creating colors
@@ -106,8 +109,7 @@ const animate = () => {
     capsule.rotation.z += 0.02;
     cone.rotation.x += 0.02;
     cone.rotation.z += 0.02;
-    
-    renderer.render(scene, camera);
+    renderer.render(scene, camera)
 }
 
 animate();
