@@ -668,7 +668,7 @@ header .container {
 .accordion span {
   position: relative;
   padding-left: 15px;
-  z-index: 15;
+  z-index: 50;
 }
 .accordion span:before {
   content: url(../images/plus_sign_acc.svg);
